@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabbir Ahmed - Software Quality Assurance Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3a0ca3;
+            --secondary-color: #6c5ce7;
+            --text-color: #1a1a1a;
+            --light-gray: #f5f7fa;
+            --border-color: #e1e5e9;
+            --card-bg: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: white;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 40px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(58, 12, 163, 0.1);
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .quick-facts {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .quick-facts ul {
+            list-style-type: none;
+        }
+        
+        .quick-facts li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .quick-facts li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .skill-category ul {
+            list-style-type: none;
+        }
+        
+        .skill-category li {
+            margin-bottom: 8px;
+        }
+        
+        .experience-item {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .experience-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .experience-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .experience-location {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .project-description {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .education-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .education-item {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .certification-item {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-section {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .contact-text {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .profile-image {
+                margin-top: 20px;
+            }
+            
+            .about-content,
+            .skills-container,
+            .education-container,
+            .certification-container {
+                flex-direction: column;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="profile-info">
+                <h1>Hi, I'm <span style="color: var(--primary-color);">Sabbir.</span></h1>
+                <p class="subtitle">Software Quality Assurance Engineer with 5+ years of experience in functional, regression, API, and end-to-end testing. Skilled in automation (Playwright, Cypress), Agile QA processes, and defect prevention to ensure reliable software delivery.</p>
+                <a href="#projects" class="btn">View Projects</a>
+                <a href="SABBIR_AHMED__SQA_.pdf" class="btn btn-secondary">Download Resume</a>
+                <p style="margin-top: 15px; font-size: 0.9rem;"><strong>Availability:</strong> Open to remote and relocation opportunities.</p>
+            </div>
+            <img src="https://via.placeholder.com/180" alt="Sabbir Ahmed" class="profile-image">
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a passionate Software Quality Assurance Engineer with extensive experience in testing enterprise and SaaS applications. I specialize in functional, regression, API, and end-to-end testing with a focus on automation using Playwright and Cypress. My expertise includes requirement analysis, test planning, defect tracking, and quality assurance processes within Agile environments.</p>
+                    <p>I have successfully improved release quality by implementing automated test suites, reducing manual effort, and enhancing sprint visibility through Jira dashboards. My goal is to deliver high-quality software by identifying and preventing defects early in the development cycle.</p>
+                    
+                    <div style="margin-top: 20px;">
+                        <p><strong>Location:</strong> Savar, Dhaka, Bangladesh</p>
+                        <p><strong>Email:</strong> <a href="mailto:sabbir.mscs@gmail.com">sabbir.mscs@gmail.com</a></p>
+                        <p><strong>Phone:</strong> +8801703802038</p>
+                        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/sabbir-sqa">linkedin.com/in/sabbir-sqa</a></p>
+                        <p><strong>GitHub:</strong> <a href="https://github.com/sabbir-sqa">github.com/sabbir-sqa</a></p>
+                    </div>
+                </div>
+                <div class="quick-facts">
+                    <h3>Quick Facts</h3>
+                    <ul>
+                        <li>5+ years experience in Software Quality Assurance</li>
+                        <li>Expertise in Automation Testing (Playwright, Cypress)</li>
+                        <li>API Testing with Postman & Newman</li>
+                        <li>Agile QA Processes & Defect Prevention</li>
+                        <li>Test Management with Jira & TestLink</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Manual Testing</h3>
+                    <ul>
+                        <li>Requirement Analysis</li>
+                        <li>Test Planning & Designing</li>
+                        <li>Writing & Reviewing Test Cases</li>
+                        <li>Test Execution & Evaluation</li>
+                        <li>Creating Test Reports</li>
+                        <li>Root Cause Analysis</li>
+                        <li>Requirement Traceability Matrix</li>
+                        <li>Bug Reporting (Jira, Redmine)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Automation Tools</h3>
+                    <ul>
+                        <li>Playwright (End-to-End UI Automation)</li>
+                        <li>Cypress (Regression Suites)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>API Testing Tools</h3>
+                    <ul>
+                        <li>Postman (REST API validation)</li>
+                        <li>Newman (JSON/XML validation)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Performance Testing</h3>
+                    <ul>
+                        <li>JMeter (Load & Stress Testing)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>Python (Basic)</li>
+                        <li>Java</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Other Skills</h3>
+                    <ul>
+                        <li>Test Management: Jira, Redmine, TestLink, Confluence</li>
+                        <li>Version Control: Git, GitHub, GitLab</li>
+                        <li>Databases: MS SQL, Oracle, MySQL</li>
+                        <li>Documentation: BRS, SRS, SDD, User Manuals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-title">Software Quality Assurance Engineer</h3>
+                    <p class="experience-date">Nov 2024 – Present</p>
+                </div>
+                <p class="experience-location">BluBird Interactive Limited • Remote</p>
+                <p>Designed test plans and executed functional, regression testing for SaaS platforms, achieving 93% test coverage. Reduced manual effort by implementing Playwright automation for regression and complex workflows. Documented 300+ enhancement tickets and improved sprint visibility using Jira dashboards. Facilitated defect triage and prioritization with cross-functional teams.</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-title">Software Quality Assurance Engineer</h3>
+                    <p class="experience-date">Apr 2022 – Oct 2024</p>
+                </div>
+                <p class="experience-location">SIMEC System Limited • Dhaka</p>
+                <p>Conducted system, functional, and integration testing for enterprise applications; reported 4000+ bugs. Improved release quality by aligning QA with business goals and root cause analysis. Validated 100+ REST APIs in Micro-service architecture, ensuring frontend-backend integration.</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-title">Junior Software Quality Assurance Engineer</h3>
+                    <p class="experience-date">Jan 2021 – Apr 2022</p>
+                </div>
+                <p class="experience-location">Workforce Solutions • Dhaka</p>
+                <p>Wrote 500+ test cases in TestLink and Google Sheets, enhancing traceability. Performed acceptance testing and collaborated on bug reporting in Jira. Worked with developers to report bugs and assist in root cause analysis.</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-title">IT Officer (Web & Systems)</h3>
+                    <p class="experience-date">Dec 2017 – Dec 2020</p>
+                </div>
+                <p class="experience-location">Golden Crown International • Dhaka</p>
+                <p>Built custom WordPress sites using Divi, converting PSDs into responsive HTML. Provided IT support, managed users, payroll, RFID systems, and Active Directory.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Delivered Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3 class="project-title">MyBrokerCloud – Real Estate Platform</h3>
+                    <p class="project-description">SaaS real estate platform for brokers/agents. Implemented Playwright automation that reduced production defects significantly.</p>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">e-DP – Defense Procurement System</h3>
+                    <p class="project-description">Validated 150+ APIs in an enterprise procurement system. Conducted JMeter load tests with 5000+ users that revealed procurement workflow bottlenecks.</p>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">ChaadRide – Vehicle Rental Service</h3>
+                    <p class="project-description">First app-based rental service in Bangladesh. Tested license verification, GPS tracking, and payment processing functionalities.</p>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">DSS HR Management System</h3>
+                    <p class="project-description">Implemented role-based testing across 10+ employee tiers with comprehensive functional documentation.</p>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Ebonear – E-Commerce Platform</h3>
+                    <p class="project-description">Tested payment gateways, inventory management, and ensured cross-browser compatibility for the e-commerce platform.</p>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Bashundhara Housing – Real Estate CMS</h3>
+                    <p class="project-description">Validated property listing and customer portal functionalities for large-scale CMS used by Bashundhara Group.</p>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Eilm – Islamic Prayer App</h3>
+                    <p class="project-description">Executed mobile QA ensuring accurate prayer times calculation and multi-language support for Android application.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <div class="education-container">
+                <div class="education-item">
+                    <h3>M.Sc. in Computer Science</h3>
+                    <p>Jahangirnagar University • 2019 – 2021</p>
+                    <p>CGPA: 3.85/4.00 (85%)</p>
+                </div>
+                <div class="education-item">
+                    <h3>B.Sc. in Computer Science & Engineering</h3>
+                    <p>Daffodil International University • 2012 – 2016</p>
+                    <p>CGPA: 2.99/4.00 (69%)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div class="education-container">
+                <div class="certification-item">
+                    <h3>Advanced Certificate for Management Professionals (ACMP 4.0)</h3>
+                    <p>IBA, University of Dhaka • 2025</p>
+                    <p>Strategy, Operations, Project & People Management, Data-Driven Decision Making</p>
+                </div>
+                <div class="certification-item">
+                    <h3>End-to-End Playwright Automation</h3>
+                    <p>Udemy • 2025</p>
+                    <p>Comprehensive training in Playwright test automation</p>
+                </div>
+                <div class="certification-item">
+                    <h3>API Test Automation with Postman</h3>
+                    <p>Applitools • 2022</p>
+                    <p>REST API automation, JSON validation, Newman scripting</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Software Testing Fundamentals</h3>
+                    <p>Great Learning • 2021</p>
+                    <p>STLC, Agile Testing, Documentation practices</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Web App Development (.NET)</h3>
+                    <p>BITM and BCC • 2017</p>
+                    <p>ASP.NET, MVC, SQL, HTML5, CSS3, Bootstrap</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-section">
+                <p class="contact-text">Interested in working together or want to learn more about my projects? Reach out via email!</p>
+                <p><strong>Email:</strong> <a href="mailto:sabbir.mscs@gmail.com">sabbir.mscs@gmail.com</a></p>
+                <p><strong>Phone:</strong> +8801703802038</p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/sabbir-sqa">linkedin.com/in/sabbir-sqa</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/sabbir-sqa">github.com/sabbir-sqa</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sabbir Ahmed. Built with ❤️ • Hosted on GitHub Pages</p>
+        </div>
+    </footer>
+</body>
+</html>
