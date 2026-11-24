@@ -15,6 +15,7 @@ I build test automation that teams trust and own quality up to the **go/no-go re
 **Featured repositories**
 | Repo | What it shows |
 |---|---|
+| ⭐ [qa-showcase-playwright](https://github.com/sabbir-sqa/qa-showcase-playwright) | **Flagship:** Playwright + TypeScript UI & API tests, OWASP API Top 10 security suite, k6 thresholds, ZAP scan, GitHub Actions quality gate |
 | [daraz-e2e-automation](https://github.com/sabbir-sqa/daraz-e2e-automation) | Playwright E2E: login, search, cart, checkout |
 | [polanji-k6](https://github.com/sabbir-sqa/polanji-k6) | k6 load tests with bottleneck analysis |
 | [cy-board-list](https://github.com/sabbir-sqa/cy-board-list) | Cypress UI + Postman API tests |
